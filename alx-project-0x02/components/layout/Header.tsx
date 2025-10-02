@@ -1,5 +1,5 @@
-import Home from "@/pages ";
-import About from "@/pages /about";
+import Home from "@/pages";
+import About from "@/pages/about";
 import Link from "next/link";
 
 function Header() {
