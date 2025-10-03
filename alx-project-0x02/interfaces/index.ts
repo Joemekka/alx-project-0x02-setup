@@ -11,10 +11,10 @@ export interface ButtonProps {
 export interface PostProps {
   title: string;
   content: string;
-  id: number;
+  userId: number;
 }
 export interface UseProps {
-  id: number;
+  userId: number;
   name: string;
   email: string;
   address: string;

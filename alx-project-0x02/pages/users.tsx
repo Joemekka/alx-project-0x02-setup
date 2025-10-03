@@ -25,8 +25,8 @@ const Users: React.FC = () => {
       <h1>Users:</h1>
       {users.map((user) => (
         <UserCard
-          key={user.id}
-          id={user.id}
+          key={user.userId}
+          userId={user.userId}
           name={user.name}
           email={user.email}
           address={user.address}

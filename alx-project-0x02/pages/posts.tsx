@@ -7,19 +7,18 @@ const Posts: React.FC = () => {
   const [posts, setPosts] = useState<PostProps[]>([]);
 
   useEffect(() => {
-    const fetchPosts = async () => {
-      try {
-        const res = await fetch("https://jsonplaceholder.typicode.com/posts");
-        const data: PostProps[] = await res.json();
-        console.log(data);
-        setPosts(data.slice(0, 10)); // show only first 10 posts
-      } catch (error) {
-        console.error("Failed to fetch posts:", error);
-      }
-    };
+    const getStaticProps = async () => {
+      const res = await fetch("https://jsonplaceholder.typicode.com/posts");
+      const data: PostProps[] = await res.json();
+      console.log(data);
+      setPosts(data.slice(0, 10)); // show only first 10 posts
 
-    fetchPosts();
-  }, []);
+      return {
+        props: { posts },
+        revalidate: 10,
+      };
+    };
+  });
 
   return (
     <div className="max-w-3xl mx-auto p-6">
@@ -27,10 +26,10 @@ const Posts: React.FC = () => {
       <h1 className="text-2xl font-bold mb-6">Posts:</h1>
       {posts.map((post) => (
         <PostCard
-          key={post.id}
+          key={post.userId}
           title={post.title}
           content={post.content}
-          id={post.id}
+          userId={post.userId}
         />
       ))}
     </div>
