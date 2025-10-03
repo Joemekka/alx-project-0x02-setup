@@ -1,8 +1,10 @@
 import Button from "@/components/common/Button";
+import Header from "@/components/layout/Header";
 
 function About() {
   return (
     <div>
+      <Header />
       <h1>About Us</h1>
       <Button size="small" shape="rounded-sm">
         Small Rounded-sm
