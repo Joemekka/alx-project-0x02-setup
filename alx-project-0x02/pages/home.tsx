@@ -16,7 +16,7 @@ function Home() {
       <Header />
       <Card
         title="ALX Software Engineering"
-        content="This is week 5 of alx software engineering course"
+        content="This is week 5 of alx software engineering assignment"
       />
       <Card
         title="How To Code"
