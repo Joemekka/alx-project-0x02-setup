@@ -22,7 +22,7 @@ const Posts: React.FC = () => {
 
   return (
     <div className="max-w-3xl mx-auto p-6">
-      <h1 className="text-2xl font-bold mb-6">Posts</h1>
+      <h1 className="text-2xl font-bold mb-6">Posts:</h1>
       {posts.map((post) => (
         <PostCard
           key={post.id}
